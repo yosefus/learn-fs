@@ -1,20 +1,40 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    "./index.html",
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/yosefus/src/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+     colors: {
+        primary: "#ff77e9",
+        bgColor: '#000',
+        textColor: '#fff',
+        textLight: '#f3f3f3'
       },
     },
   },
+  safelist: [
+    "bg-red-700",
+    {
+
+      pattern: /(border|bg|p|m|text)-[^/]+$/,
+      variants: [
+        'dark',
+        'hover',
+        'focus',
+        'md',
+        'lg',
+        'sm',
+        'xl',
+        'dark:hover',
+        'dark:focus',
+        ,
+      ],
+    },
+  ],
   plugins: [],
 }
-export default config
