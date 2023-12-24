@@ -6,6 +6,7 @@ import { Alert, Loader, apiReq } from "@/react-tailwind-components";
 import SpecialInput from "@/react-tailwind-components/form/SpecialInput";
 import { Blog, DataBlog } from "@/react-tailwind-components/types";
 import sortByIndex from "@/utils/sortByIndexes";
+import AddBtns from "@/react-tailwind-components/form/AddBtns";
 
 
 
@@ -17,17 +18,17 @@ export default function CreateBlog({ params: { id } }: { params: { id: string } 
       [imagesByCountry, setimagesByCountry] = useState([]),
       contentToPrint = data?.content?.length ? sortByIndex(data?.content) : []
 
-   // console.log(imagesByCountry);
+   console.log(data, contentToPrint);
 
    useEffect(() => {
-      apiReq({ path: 'blogs/readOne', body: { _id: id } })
-         .then(setData)
-         .catch(handleErrors)
-         .finally(() => setLoading(false))
+      // apiReq({ path: 'blogs/readOne', body: { _id: id } })
+      //    .then(setData)
+      //    .catch(handleErrors)
+      //    .finally(() => setLoading(false))
    }, [])
 
    function handleErrors(e: any) {
-      console.error({e})
+      console.error({ e })
       setError(e.message || e)
       setTimeout(() => {
          setError('')
@@ -41,18 +42,20 @@ export default function CreateBlog({ params: { id } }: { params: { id: string } 
    // }
 
    async function updateContentServer(updatedContent: DataBlog[]) {
-      setLoading(true)
-      apiReq({ path: `blogs/updateContent`, body: { values: updatedContent, _id: id } })
-         .then(setData)
-         .catch(handleErrors)
-         .finally(() => setLoading(false))
+      // debugger
+      setData({ content: updatedContent })
+      // setLoading(true)
+      // apiReq({ path: `blogs/updateContent`, body: { values: updatedContent, _id: id } })
+      //    .then(setData)
+      //    .catch(handleErrors)
+      //    .finally(() => setLoading(false))
    }
 
 
    function addContent(type: string, beforeDataIndex: number) {
       const
          isFirst = typeof beforeDataIndex !== 'number',
-         newContent = { type, content: '', index: !isFirst ? beforeDataIndex + 1 : 0 },
+         newContent = { type, content: '', index: !isFirst ? beforeDataIndex + 1 : 0, _id: Math.random() },
          updatedIndexes = contentToPrint.length ?
             contentToPrint.map(d =>
                ((d.index > beforeDataIndex) || isFirst) ?
@@ -99,9 +102,15 @@ export default function CreateBlog({ params: { id } }: { params: { id: string } 
       <>
          {loading && <div className="p-40" ><Loader /></div>}
          {error && <div ><Alert color="red">{error}</Alert></div>}
-
+         <h1>edit / create</h1>
 
          <div className={loading ? 'animate-pulse' : ''}>
+
+            {!contentToPrint.length &&
+               <div className="relative h-32 border-b border-gray-500">
+                  <AddBtns addContent={addContent} isLast isFirst index={0} />
+               </div>}
+            
             {contentToPrint.map((data, i) =>
                <SpecialInput
                   addContent={addContent}

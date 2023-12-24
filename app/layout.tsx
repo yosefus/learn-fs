@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="he" dir='rtl'>
       <body className={assistant.className}>{children}</body>
     </html>
   )

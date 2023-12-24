@@ -4,8 +4,7 @@ export default {
     "./index.html",
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/yosefus/src/*.{js,ts,jsx,tsx}",
-    "./react-tailwind-components/**/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/***/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
