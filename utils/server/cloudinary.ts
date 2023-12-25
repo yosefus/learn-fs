@@ -27,6 +27,7 @@ export interface uploadProps {
    blog: string
    options: any
 }
+
 export async function uploadImages({ files, folder, blog, options = {} }: uploadProps) {
    const uploadSingleFile = (f: File) => cloudinary.uploader.upload(f.base64, { upload_preset: 'blog', folder, ...options, format: 'WebP' })
    const res = await Promise.all(files.map(uploadSingleFile))
@@ -37,15 +38,16 @@ export async function deleteImageByPublicId({ publicId }: { publicId: string }) 
    return await cloudinary.uploader.destroy(publicId);
 }
 
-export async function getImagesByCountry({ country }: { country: string }) {
-   return await cloudinary.search.expression(`${country}/*`).execute()
+export async function getImagesByFolder({ folder }: { folder: string }) {
+   return await cloudinary.search.expression(`${folder}/*`).execute()
 }
 
-export interface uploadPropsToCountry {
+export interface uploadPropsToFolder {
    files: File[],
    folder: string
 }
-export async function uploadImagesToCountry({ files, folder }: uploadPropsToCountry) {
+
+export async function uploadImagesToFolder({ files, folder }: uploadPropsToFolder) {
    const options = {
       responsive_breakpoints: { create_derived: true, bytes_step: 20000, min_width: 200, max_width: 1920, max_images: 10 },
       overwrite: true,

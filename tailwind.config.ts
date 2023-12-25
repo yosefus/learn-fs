@@ -3,8 +3,10 @@ export default {
   content: [
     "./index.html",
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./react-tailwind-components/***/**/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/form/**/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/hooks/**/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/table/**/*.{js,ts,jsx,tsx}",
+    "./react-tailwind-components/ui/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
