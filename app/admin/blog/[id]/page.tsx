@@ -1,4 +1,6 @@
-import { EditBlogContent } from "@/react-tailwind-components";
+// import { EditBlogContent } from "@/react-tailwind-components";
+
+import EditBlogContent from "@/react-tailwind-components/form/EditBlogContent";
 
 
 

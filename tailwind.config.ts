@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     "./react-tailwind-components/form/**/*.{js,ts,jsx,tsx}",
     "./react-tailwind-components/hooks/**/*.{js,ts,jsx,tsx}",
@@ -18,24 +17,6 @@ export default {
       },
     },
   },
-  safelist: [
-    "bg-red-700",
-    {
-
-      pattern: /(border|bg|p|m|text)-[^/]+$/,
-      variants: [
-        'dark',
-        'hover',
-        'focus',
-        'md',
-        'lg',
-        'sm',
-        'xl',
-        'dark:hover',
-        'dark:focus',
-        ,
-      ],
-    },
-  ],
+  safelist: [  ],
   plugins: [],
 }
