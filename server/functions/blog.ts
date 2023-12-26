@@ -1,26 +1,24 @@
 "use server"
+
 import BlogModel, { BlogInterface } from "../models/blog";
 import Controller from "./mainController";
 
-export const blogController = new Controller(BlogModel)
+const blogController = new Controller(BlogModel)
 
-const blogFn = {
-    createBlogCreator : (blog: Partial<BlogInterface>) => {
-      return blogController.create(blog)
-   },
-   
-    updateBlogCreator : (id:string , blog: Partial<BlogInterface>) => {
-      return blogController.findByIdAndUpdate(id, blog)
-   },
-   
-    deleteBlogCreator : (id:string ) => {
-      return blogController.deleteById(id)
-   },
-   
-    findBlogById : (id:string ) => {
-      return blogController.findById(id)
-   },
+
+export const createBlogCreator = async ({ blog }: { blog: Partial<BlogInterface> }) => {
+   return blogController.create(blog)
 }
 
+export const updateBlogCreator = async ({ id, blog }: { id: string, blog: Partial<BlogInterface> }) => {
+   return blogController.findByIdAndUpdate(id, blog)
+}
 
-export default blogFn
+export const deleteBlogCreator = async ({ id }: { id: string }) => {
+   return blogController.deleteById(id)
+}
+
+export const findBlogById = async ({ id }: { id: string }) => {
+   return blogController.findById(id)
+}
+

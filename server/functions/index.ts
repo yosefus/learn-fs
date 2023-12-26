@@ -1,5 +1,10 @@
-import blogFn from './blog'
+import { createBlogCreator , deleteBlogCreator, findBlogById, updateBlogCreator} from './blog'
 
-export default {
-   ...blogFn
+const functions: any = {
+   createBlogCreator,
+   deleteBlogCreator,
+   findBlogById,
+   updateBlogCreator,
 }
+
+export default functions
