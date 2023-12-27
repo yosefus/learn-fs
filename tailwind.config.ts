@@ -6,6 +6,7 @@ export default {
     "./react-tailwind-components/hooks/**/*.{js,ts,jsx,tsx}",
     "./react-tailwind-components/table/**/*.{js,ts,jsx,tsx}",
     "./react-tailwind-components/ui/**/*.{js,ts,jsx,tsx}",
+    "./utils/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

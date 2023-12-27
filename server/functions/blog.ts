@@ -6,12 +6,12 @@ import Controller from "./mainController";
 const blogController = new Controller(BlogModel)
 
 
-export const createBlogCreator = async ({ blog }: { blog: Partial<BlogInterface> }) => {
-   return blogController.create(blog)
+export const createBlogCreator = async ({ data }: { data: Partial<BlogInterface> }) => {
+   return blogController.create(data)
 }
 
-export const updateBlogCreator = async ({ id, blog }: { id: string, blog: Partial<BlogInterface> }) => {
-   return blogController.findByIdAndUpdate(id, blog)
+export const updateBlogCreator = async ({ id, data }: { id: string, data: Partial<BlogInterface> }) => {
+   return blogController.findByIdAndUpdate(id, data)
 }
 
 export const deleteBlogCreator = async ({ id }: { id: string }) => {

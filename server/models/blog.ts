@@ -52,13 +52,13 @@ const blogSchema = new Schema<BlogDocument>(
       description: { type: String, required: true },
       keywords: { type: String, required: true },
       category: { type: String, required: true },
-      creator: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-      isActive: { type: Boolean, default: false },
+      creator: { type: Schema.Types.ObjectId, ref: 'User',  },
+      isActive: { type: Boolean, default: true },
       isPublish: { type: Boolean, default: false },
       createdAt: { type: Date, default: Date.now },
       updatedAt: { type: Date, default: Date.now },
       title: { type: String, required: true },
-      img: { type: String, required: true },
+      img: { type: String },
       // Add more properties as needed
    },
    { timestamps: true } // Adds createdAt and updatedAt automatically

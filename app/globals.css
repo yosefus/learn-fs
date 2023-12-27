@@ -15,6 +15,12 @@
   flex-wrap: wrap;
 }
 
+@layer components {
+  .card {
+    @apply border rounded border-gray-300 shadow;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
