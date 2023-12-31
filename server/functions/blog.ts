@@ -22,3 +22,7 @@ export const findBlogById = async ({ id }: { id: string }) => {
    return blogController.findById(id)
 }
 
+export const findAllBlogsCreator = async () => {
+   return blogController.find()
+}
+

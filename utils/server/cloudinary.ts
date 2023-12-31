@@ -55,8 +55,9 @@ export async function uploadImagesToFolder({ files, folder }: uploadPropsToFolde
       fetch_format: 'auto',
       crop: 'fill',
       gravity: 'auto',
-      upload_preset: 'blog',
+      // upload_preset: 'blog',
       folder,
+      
       use_filename: true,
       format: 'WebP'
    }

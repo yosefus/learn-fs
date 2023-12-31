@@ -1,6 +1,7 @@
 import { Document, Schema, model, Types, models } from 'mongoose';
 
 export interface BlogContent {
+   _id: string;
    href: string;
    content: string;
    index: number;
@@ -8,6 +9,7 @@ export interface BlogContent {
 }
 
 export interface BlogInterface {
+   _id: string;
    content: BlogContent[];
    description: string;
    keywords: string;

@@ -24,9 +24,9 @@ export default async function CreateBlog({ params: { id } }: { params: { id: str
             updateContentPath="/updateBlogCreator"
             fetchPath="/findBlogById"
             updatePath=""
-            pathAddToCloudinary=""
+            pathAddToCloudinary="/uploadCloudinaryCreator"
             pathDeleteFromCloudinary=""
-            pathGetFromCloudinary=""
+            pathGetFromCloudinary="/getByFolderCloudinaryCreator"
          />
       </>
    )
