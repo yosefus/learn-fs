@@ -19,6 +19,10 @@
   .card {
     @apply border rounded border-gray-300 shadow;
   }
+  
+  .button {
+    @apply flex items-center rounded-3xl justify-between bg-black text-white  gap-2 py-2 px-4 w-fit min-w-28 hover:opacity-80 ease-in-out duration-200;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +30,10 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+  }
+
+  input, select {
+    background-color: #262626;
   }
 }
 

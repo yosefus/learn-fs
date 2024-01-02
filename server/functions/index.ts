@@ -1,5 +1,5 @@
-import { createBlogCreator , deleteBlogCreator, findBlogById, updateBlogCreator, findAllBlogsCreator} from './blog'
-import { uploadCloudinaryCreator , getByFolderCloudinaryCreator} from './cloudinary'
+import { createBlogCreator , deleteBlogCreator, findBlogById, updateBlogCreator, findBlogByIdCreator, findAllBlogsCreator} from './blog'
+import { uploadCloudinaryCreator , getByFolderCloudinaryCreator, deleteByPublicIdCreator} from './cloudinary'
 
 const functions: any = {
    createBlogCreator,
@@ -9,7 +9,8 @@ const functions: any = {
    findAllBlogsCreator,
    uploadCloudinaryCreator,
    getByFolderCloudinaryCreator,
-
+   deleteByPublicIdCreator,
+   findBlogByIdCreator,
 }
 
 export default functions

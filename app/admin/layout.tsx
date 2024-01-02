@@ -8,7 +8,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="container px-2 mx-auto flex gap-2">
           <MenuHover
             list={[
-            { text: 'יצירת בלוג חדש', href: '/admin/blog/create' }
+            { text: 'יצירת בלוג חדש', href: '/admin/blog/create' },
+            { text: 'כל הבלוגים', href: '/admin/blog' },
           ]}
             text="בלוגים"
           />

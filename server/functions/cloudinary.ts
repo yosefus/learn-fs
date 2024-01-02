@@ -6,3 +6,6 @@ export const uploadCloudinaryCreator = ({files, folder}: {files: any[], folder: 
 export const getByFolderCloudinaryCreator = ({ folder}: { folder: string}) => {
    return cloudFn.getImagesByFolder({ folder})
 }
+export const deleteByPublicIdCreator = ({ publicId}: { publicId: string}) => {
+   return cloudFn.deleteImageByPublicId({ publicId })
+}

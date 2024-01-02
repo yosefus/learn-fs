@@ -1,11 +1,13 @@
 import { Document, Schema, model, Types, models } from 'mongoose';
 
+
+type TypeContent = 'title' |'code' | 'link'| 'iframe'|'text'|'img'
 export interface BlogContent {
    _id: string;
    href: string;
    content: string;
    index: number;
-   type: string;
+   type: TypeContent;
 }
 
 export interface BlogInterface {
