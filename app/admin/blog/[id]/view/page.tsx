@@ -14,7 +14,7 @@ export default async function viewBlog({ params: { id } }: { params: { id: strin
       <>
          <Link
             href={`/admin/blog/${id}`}
-            className="w-9 h-9 rounded-full bg-primary fixed right-8 bottom-8 text-xl f-c hover:scale-90">
+            className="w-9 h-9  rounded-full bg-primary z-30 fixed right-8 bottom-8 text-xl f-c hover:scale-90">
             <MdOutlineModeEditOutline />
          </Link>
          <ViewBlog blog={blog} />

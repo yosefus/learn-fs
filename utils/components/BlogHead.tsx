@@ -20,6 +20,14 @@ export default function BlogHead({data = {}} : {data?: any}) {
             <label htmlFor="title">כותרת</label>
             <Input defaultValue={data?.title} required name='title' id='title' placeholder='title' specialClassName='flex-1' />
          </div>
+         <div className="flex gap-2 mb-2 items-center">
+            <label htmlFor="isPublish">לפרסם</label>
+            <Input defaultChecked={data?.isPublish} type="checkbox" name='isPublish' id='isPublish' placeholder='isPublish' />
+         </div>
+         <div className="flex gap-2 mb-2 items-center">
+            <label htmlFor="isActive">פעיל</label>
+            <Input defaultChecked={data?.isActive} type="checkbox" name='isActive' id='isActive' placeholder='isActive' />
+         </div>
       </>
    )
 }

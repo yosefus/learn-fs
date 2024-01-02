@@ -25,6 +25,38 @@
   }
 }
 
+details *{
+  transition: all ease-in-out .2s;
+}
+
+details {
+  transition: all ease-in-out .2s;
+  user-select: none;
+  opacity: 0.9;
+}
+
+details[open]{
+ opacity: 1;
+}
+
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: linear-gradient(to bottom, red, orange);
+  }
+
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

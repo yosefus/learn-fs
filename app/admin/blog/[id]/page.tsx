@@ -22,7 +22,7 @@ export default async function CreateBlog({ params: { id } }: { params: { id: str
          <Link
             href={`/admin/blog/${id}/view`}
             title="see a preview"
-            className="w-9 h-9 rounded-full bg-primary fixed right-8 bottom-8 text-xl f-c hover:scale-90">
+            className="w-9 h-9 rounded-full bg-primary fixed z-30 right-8 bottom-8 text-xl f-c hover:scale-90">
             <FaEye />
          </Link>
          {/* TODO - update only the content end get only the content */}
