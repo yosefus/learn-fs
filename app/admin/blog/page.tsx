@@ -1,11 +1,11 @@
 
-import { Table, Text } from '@/react-tailwind-components'
+import { Text } from '@/react-tailwind-components'
 import { connectToMongo } from '@/react-tailwind-components/backend/connect'
 import { findAllBlogsCreator } from '@/server/functions/blog'
 import { BlogInterface } from '@/server/models/blog'
+import AllBlogsTable from '@/utils/components/AllBlogsTable'
 import Link from 'next/link'
 import { FaEye } from "react-icons/fa"
-import { FiDelete } from 'react-icons/fi'
 import { MdEdit } from "react-icons/md"
 
 
@@ -22,7 +22,7 @@ export default async function page() {
                   <Text type='h2'>{blog.title}</Text>
                   <Text> is publish: {blog.isPublish ? 'yes' : 'no'} </Text>
                   <Text> is active: {blog.isActive ? 'yes' : 'no'} </Text>
-                  <Text>category : {blog.category}</Text>
+                  <Text>category : {blog.category?.name}</Text>
                   <div className="f-c py-2 gap-2">
                      <Link href={`/admin/blog/${blog._id}`} className='button' >
                         עריכה <MdEdit />
@@ -34,24 +34,7 @@ export default async function page() {
                </li>
             )}
          </ul>
-         <div className='container mx-auto overflow-x-auto rounded-lg'>
-            <Table
-               columns={[
-                  { key: 'title', name: 'כותרת', type: 'string' },
-                  { key: 'isPublish', name: 'פורסם', type: 'boolean' },
-                  { key: 'isActive', name: 'פעיל', type: 'boolean' },
-                  { key: 'category', name: 'קטגוריה', type: 'string' },
-                  { key: 'createdAt', name: 'נוצר', type: 'date' },
-                  { key: 'updatedAt', name: 'נערך', type: 'date' },
-               ]}
-               data={allBlogs}
-               orderByOptions={[]}
-               loading={false}
-               actions={[
-                  // {element: <MdEdit/> , tooltipContent:'edit', href : (id) => `/admin/blog/${id}` }
-               ]}
-            />
-         </div>
+         <AllBlogsTable prefetchData={JSON.stringify(allBlogs) } />
       </div>
    )
 }

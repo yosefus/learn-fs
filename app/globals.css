@@ -64,7 +64,7 @@ details[open]{
     --background-end-rgb: 0, 0, 0;
   }
 
-  input, select {
+  input, select, textarea {
     background-color: #262626;
   }
 }

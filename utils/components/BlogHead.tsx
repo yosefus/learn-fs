@@ -1,4 +1,5 @@
 import { Input, Select } from "@/react-tailwind-components";
+import SelectCategory from "./SelectCategory";
 
 export default function BlogHead({data = {}} : {data?: any}) {
    return (
@@ -13,8 +14,7 @@ export default function BlogHead({data = {}} : {data?: any}) {
          </div>
          <div className="flex gap-2 mb-2 items-center">
             <label htmlFor="category">קטגוריה</label>
-            <Select name='category' id='category' specialClassName='flex-1' defaultValue={data?.category}
-               options={["html", "css", "javascript", "typescript", "react", "next", "node"]} />
+            <SelectCategory defaultValue={ data?.category?._id} />
          </div>
          <div className="flex gap-2 mb-2 items-center">
             <label htmlFor="title">כותרת</label>

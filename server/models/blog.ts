@@ -15,7 +15,11 @@ export interface BlogInterface {
    content: BlogContent[];
    description: string;
    keywords: string;
-   category: string;
+   category: {
+      name: string
+      _id: string
+      image?: string
+   };
    creator: Types.ObjectId;
    isActive: boolean;
    isPublish: boolean;
@@ -29,7 +33,7 @@ export interface BlogDocument extends Document {
    content: BlogContent[];
    description: string;
    keywords: string;
-   category: string;
+   category:  Types.ObjectId;
    creator: Types.ObjectId;
    isActive: boolean;
    isPublish: boolean;
@@ -55,8 +59,8 @@ const blogSchema = new Schema<BlogDocument>(
       content: [contentSchema],
       description: { type: String, required: true },
       keywords: { type: String, required: true },
-      category: { type: String, required: true },
-      creator: { type: Schema.Types.ObjectId, ref: 'User',  },
+      category: { type: Schema.Types.ObjectId, ref: 'categories'  },
+      creator: { type: Schema.Types.ObjectId, ref: 'users'  },
       isActive: { type: Boolean, default: true },
       isPublish: { type: Boolean, default: false },
       createdAt: { type: Date, default: Date.now },

@@ -13,6 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ]}
             text="בלוגים"
           />
+          <MenuHover
+            list={[
+            { text: 'כל הקטגוריות', href: '/admin/category' },
+          ]}
+            text="קטגוריות"
+          />
 
         </div>
       </header>
